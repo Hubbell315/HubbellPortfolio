@@ -1,0 +1,1320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: #ffffff;
+    --main-color: #00ffee;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        scroll-behavior: smooth;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    :root {
+        --bg-color: #080808;
+        --second-bg-color: #131313;
+        --text-color: #ffffff;
+        --main-color: #00ffee;
+    }
+    
+    html {
+        font-size: 60%;
+        overflow-x: hidden;
+    }
+    
+    body {
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+    
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8rem;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem 12% 4rem;
+        z-index: 5;
+    }
+    
+    .logo {
+        font-size: 3rem;
+        color: var(--text-color);
+        font-weight: 800;
+        cursor: pointer;
+        transition: color 1s ease;
+    }
+    
+    .logo:hover {
+        transform: scale(1.1);
+    }
+    
+    .logo span {
+        text-shadow: 0 0 25px var(--main-color);
+    }
+    
+    .navbar a {
+        font-size: 1.8rem;
+        color: var(--text-color);
+        margin-left: 4rem;
+        font-weight: 500;
+        transition: 0.3s ease;
+        border-bottom: 3px solid transparent;
+    }
+    
+    .navbar a:hover,
+    .navbar a.active {
+        color: var(--main-color);
+        border-bottom: 3px solid var(--main-color);
+    }
+    
+    #menu-icon {
+        font-size: 3.6rem;
+        color: var(--main-color);
+    }
+    
+    /* Home Section Styles */
+    .home {
+        display: flex; /* Use flexbox to arrange content and image side-by-side */
+        justify-content: center;
+        align-items: center;
+        padding: 10rem 12% 0; /* Adjust padding as needed */
+        gap: 3rem; /* Space between content and image */
+        min-height: 100vh; /* Ensure it takes full viewport height */
+    }
+    
+    .home-content {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: baseline; /* Align items to the start of the cross axis (left for column) */
+        justify-content: center;
+        text-align: left;
+        margin-top: 3rem;
+        /* Add some width constraint for better layout, or let it flex */
+        /* max-width: 600px; */ /* Example: adjust as needed */
+    }
+    
+    .home-content h1 {
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    
+    .home-content h3 {
+        font-size: 3.5rem;
+        font-weight: 700;
+    }
+    
+    .home-content p {
+        font-size: 1.8rem;
+        margin: 2rem 0 3rem;
+        line-height: 1.5;
+    }
+    
+    .home-img {
+        flex: 1; /* Allow image container to take available space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .home-img img {
+        width: 100%; /* Make image responsive within its container */
+        max-width: 400px; /* Set a maximum width for the image */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 50%; /* Example: make it circular if you want */
+        box-shadow: 0 0 25px var(--main-color),
+                    0 0 50px var(--main-color); /* Add some glow */
+    }
+    
+    .social-icons {
+        display: flex; /* Make the social icons themselves display horizontally */
+        /*
+        To make them "perpendicular" with the buttons, we need to span them
+        across the same width as the buttons and then justify their content.
+        We'll set a width relative to the btn-group or use space-between.
+        */
+        width: 100%; /* Make it take full width of home-content initially */
+        justify-content: space-evenly; /* Distribute icons evenly across the width */
+        /* OR use space-between and control margin for ends if only two icons */
+        /* justify-content: space-between; */
+        /* If you use space-between, add a max-width to this container
+           to match the button group if it has a specific width, or
+           adjust the margin on the buttons. */
+        gap: 5rem;
+        margin: 2rem 0 1.5rem 0; /* Top, Right, Bottom, Left margin. Adjust bottom margin for space above buttons */
+        /* The 1.5rem bottom margin will create space between the icons and the buttons */
+        align-items: center; /* Vertically center the icons within their container */
+    }
+    
+    /* Individual Social Icon Links (keep these as they are good) */
+    .social-icons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.5rem;
+        height: 4.5rem;
+        background: transparent;
+        border: 2px solid var(--main-color);
+        border-radius: 50%;
+        font-size: 2.5rem;
+        color: var(--main-color);
+        transition: 0.3s ease;
+        /* Remove 'margin: 3rem 1.5rem 3rem 0;' from here if it exists,
+           as 'gap' or 'justify-content' on the parent handles spacing */
+    }
+    
+    .social-icons a:hover {
+        color: var(--text-color);
+        transform: scale(1.1);
+        box-shadow: 0 0 25px var(--main-color);
+        background-color: var(--main-color);
+    }
+    
+    /* --- Button Group (mostly stays the same) --- */
+    .btn-group {
+        display: flex;
+        gap: 1.5rem; /* Space between the two buttons */
+        margin-top: 0; /* No top margin here, as social-icons has bottom margin */
+        align-items: center; /* Vertically align buttons */
+        /* Add a width if you want the social icons to align specifically to this width */
+        /* width: fit-content; */ /* Example: or set a specific px width */
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 1.2rem 2.8rem;
+        background: var(--main-color);
+        border-radius: 4rem;
+        font-size: 1.6rem;
+        color: var(--bg-color);
+        font-weight: 600;
+        transition: 0.5s ease;
+        box-shadow: 0 0 25px var(--main-color);
+    }
+    
+    .btn:hover {
+        box-shadow: none;
+    }
+    
+    section{
+        min-height: 100vh;
+        padding: 10rem 12% 10rem;
+    }
+    .home{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15rem;
+    }
+    .home-content{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: center;
+        text-align: left;
+        margin-top: 3rem;
+    }
+    span{
+        color: var(--main-color);
+    }
+    .logo span {
+        color: var(--main-color);
+    }
+    .home-content h3{
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        font-size: 3.5rem;
+    }
+    .home-content h1{
+        font-size: 7rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        line-height: 1;
+    }
+    .home-img{
+        border-radius: 50%;
+    }
+    .home-img img{
+        position: relative;
+        top: 3rem;
+        width: 32vw;
+        border-radius: 50%;
+        box-shadow: 0 0 25 px var(--main-color);
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+    .home-img img:hover {
+        box-shadow: 0 0 25px var(--main-color),
+                    0 0 50px var(--main-color),
+                    0 0 100px var(--main-color);
+    }
+    .home-content p{
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.8;
+        max-width: 1000px;
+    }
+    .social-icons{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.5rem;
+        height: 4.5rem;
+        background: transparent;
+        border: 2px solid var(--main-color);
+        font-size: 2.5rem;
+        border-radius: 50%;
+        color: var(--main-color);
+        margin: 3rem 1.5rem 3rem 0;
+        transition: 0.3s ease;
+    }
+    .social-icons a:hover{
+        color: var(--text-color);
+        transform: scale(1.3)translateY(-5px);
+        box-shadow: 0 0 25px var(--main-color);
+        background-color: var(--main-color);
+    }
+    .btn{
+        display: inline-block;
+        padding: 1.2rem 2.8rem;
+        background: var(--main-color);
+        box-shadow: 0 0 25px var(--main-color);
+        border-radius: 4rem;
+        font-size: 1.6rem;
+        color: black;
+        border: 2px solid transparent;
+        font-weight: 600;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    .btn:hover{
+        transform: scale(1.05);
+        box-shadow: 0 0 50px var(--main-color);
+    }
+    .btn-group{
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .btn-group a:nth-of-type(2){
+        background-color: black;
+        color: var(--main-color);
+        border: 2px solid var(--main-color);
+        box-shadow: 0 0 25px transparent;
+    }
+    .btn-group a:nth-of-type(2):hover{
+        box-shadow: 0 0 25px var(--main-color);
+        background-color: var(--main-color);
+        color: black;
+    }
+    .text-animation{
+        font-size: 34px;
+        font-weight: 600;
+        min-width: 280px;
+    }
+    .text-animation span{
+        position: relative;
+    }
+    .text-animation span::before{
+        content: "Web Developer";
+        color: var(--main-color);
+        animation: words 20s infinite;
+    }
+    .text-animation span::after{
+        content: "";
+        background-color: var(--bg-color);
+        position: absolute;
+        width: calc(100% + 8px); 
+        height: 100%;
+        border-left: 3px solid var(--bg-color); /* The actual cursor line */
+        right: -8px; /* Position it correctly */
+        /* Only change: animation for typing! */
+        animation: cursor 0.6s infinite, typing 18s steps(14) infinite;
+    }
+    @keyframes cursor {
+        to{
+            border-left:2px solid var(--main-color);
+        }
+    }
+    @keyframes words{
+        
+        0%,
+        24% { 
+            content: "UI / UX Designer"; /* Keep content consistent while mask deletes it */
+        }
+        
+        25%,
+        50%{
+            content: "Software Engineer";
+        } 
+        51%,
+        76%{
+            content: "Learner";
+        }
+    
+    }
+    
+    @keyframes typing {
+        10%,
+        15%,
+        30%,
+        35%,
+        50%,
+        55%,
+        70%,
+        75%,
+        90%,
+        95%{
+            width: 0;
+        }
+        5%,
+        20%,
+        25%,
+        40%,
+        45%,
+        60%,
+        65%,
+        80%,
+        85%{
+            width: calc(100% + 8px);
+        }
+    }
+    .heading{
+        font-size: 8rem;
+        text-align: center;
+        margin: 5rem 0;
+    }
+    .education{
+        padding: 100px 15px;
+        background: var(--second-bg-color);
+    }
+    .education h2{
+        margin-bottom: 5rem;
+    }
+    .timeline-items{
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .timeline-items::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        left: calc(50% - 1px);
+        height: 100%;
+        background-color: var(--main-color);
+    }
+    .timeline-item{
+        margin-bottom: 40px;
+        width: 100%;
+        position: relative;
+    }
+    .timeline-item.last-child{
+        margin-bottom: 0;
+    }
+    .timeline-item:nth-child(odd) {
+        padding-right: calc(50% + 30px);
+        text-align: right;
+    }
+    .timeline-item:nth-child(even) {
+        padding-left: calc(50% + 30px);
+    }
+    .timeline-dot{
+        height: 21px;
+        width: 21px;
+        background-color: var(--main-color);
+        box-shadow: 0 0 25px var(--main-color),
+                    0 0 50px var(--main-color);
+        position: absolute;        
+        left: calc(50% - 8px);
+        border-radius: 50%;
+        top: 10px; 
+    }
+    .timeline-date{
+        font-size: 20px;
+        font-weight: 800;
+        color: white;
+        margin: 6px 0 15px;
+    }
+    .timeline-content{
+        background: var(--bg-color);
+        border: 3px solid var(--main-color);
+        padding: 30px 50px;
+        border-radius: 4rem;
+        box-shadow: 0 0 10px var(--main-color);
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+    }
+    .timeline-content:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px var(--main-color),
+    }
+    .timeline-content h3 {
+        font-size: 20px;
+        color: white;
+        margin: 0 0 10px;
+        font-weight: 500;
+    }
+    .timeline-content p {
+        color: white;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 22px;
+    }
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--main-color);
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--bg-color);
+        width: 50px;
+    }
+    
+    height: 8rem;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 12% 4rem;
+    z-index: 5;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: color 1s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    text-shadow: 0 0 25px var(--main-color);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+}
+
+/* Home Section Styles */
+.home {
+    display: flex; /* Use flexbox to arrange content and image side-by-side */
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 12% 0; /* Adjust padding as needed */
+    gap: 3rem; /* Space between content and image */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: baseline; /* Align items to the start of the cross axis (left for column) */
+    justify-content: center;
+    text-align: left;
+    margin-top: 3rem;
+    /* Add some width constraint for better layout, or let it flex */
+    /* max-width: 600px; */ /* Example: adjust as needed */
+}
+
+.home-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.8rem;
+    margin: 2rem 0 3rem;
+    line-height: 1.5;
+}
+
+.home-img {
+    flex: 1; /* Allow image container to take available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 100%; /* Make image responsive within its container */
+    max-width: 400px; /* Set a maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Example: make it circular if you want */
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color); /* Add some glow */
+}
+
+.social-icons {
+    display: flex; /* Make the social icons themselves display horizontally */
+    /*
+    To make them "perpendicular" with the buttons, we need to span them
+    across the same width as the buttons and then justify their content.
+    We'll set a width relative to the btn-group or use space-between.
+    */
+    width: 100%; /* Make it take full width of home-content initially */
+    justify-content: space-evenly; /* Distribute icons evenly across the width */
+    /* OR use space-between and control margin for ends if only two icons */
+    /* justify-content: space-between; */
+    /* If you use space-between, add a max-width to this container
+       to match the button group if it has a specific width, or
+       adjust the margin on the buttons. */
+    gap: 5rem;
+    margin: 2rem 0 1.5rem 0; /* Top, Right, Bottom, Left margin. Adjust bottom margin for space above buttons */
+    /* The 1.5rem bottom margin will create space between the icons and the buttons */
+    align-items: center; /* Vertically center the icons within their container */
+}
+
+/* Individual Social Icon Links (keep these as they are good) */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    transition: 0.3s ease;
+    /* Remove 'margin: 3rem 1.5rem 3rem 0;' from here if it exists,
+       as 'gap' or 'justify-content' on the parent handles spacing */
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+
+/* --- Button Group (mostly stays the same) --- */
+.btn-group {
+    display: flex;
+    gap: 1.5rem; /* Space between the two buttons */
+    margin-top: 0; /* No top margin here, as social-icons has bottom margin */
+    align-items: center; /* Vertically align buttons */
+    /* Add a width if you want the social icons to align specifically to this width */
+    /* width: fit-content; */ /* Example: or set a specific px width */
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    font-weight: 600;
+    transition: 0.5s ease;
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    text-align: left;
+    margin-top: 3rem;
+}
+span{
+    color: var(--main-color);
+}
+.logo span {
+    color: var(--main-color);
+}
+.home-content h3{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.home-content h1{
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+.home-img{
+    border-radius: 50%;
+}
+.home-img img{
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25 px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.home-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+.social-icons{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+}
+.social-icons a:hover{
+    color: var(--text-color);
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+.btn{
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.btn-group{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.btn-group a:nth-of-type(2){
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+.btn-group a:nth-of-type(2):hover{
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+}
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px); 
+    height: 100%;
+    border-left: 3px solid var(--bg-color); /* The actual cursor line */
+    right: -8px; /* Position it correctly */
+    /* Only change: animation for typing! */
+    animation: cursor 0.6s infinite, typing 18s steps(14) infinite;
+}
+@keyframes cursor {
+    to{
+        border-left:2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    
+    0%,
+    24% { 
+        content: "UI / UX Designer"; /* Keep content consistent while mask deletes it */
+    }
+    
+    25%,
+    50%{
+        content: "Software Engineer";
+    } 
+    51%,
+    76%{
+        content: "Learner";
+    }
+
+}
+
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+}
+.heading{
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+.education{
+    padding: 100px 15px;
+    background: var(--second-bg-color);
+}
+.education h2{
+    margin-bottom: 5rem;
+}
+.timeline-items{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.timeline-items::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    left: calc(50% - 1px);
+    height: 100%;
+    background-color: var(--main-color);
+}
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+.timeline-item.last-child{
+    margin-bottom: 0;
+}
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;        
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px; 
+}
+.timeline-date{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+}
+.timeline-content{
+    background: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color),
+}
+.timeline-content h3 {
+    font-size: 20px;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+.timeline-content p {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    width: 50px;
+}
+.services{
+    background: var(--bg-color);
+    color: black;
+}
+.services h2{
+    margin-bottom: 5rem;
+    color: white;
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.service-box{
+    background-color: var(--main-color);
+    height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.service-box:hover{
+    background: white;
+    color: black;
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+.service-box .service-info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 200px;
+    justify-content: left;
+    align-items: baseline;
+    padding: 5rem 5rem;
+}
+.service-info h4{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+}
+.service-info p{
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+    margin: auto;
+}
+.testimonials{
+    background: var(--second-bg-color);
+}
+.testimonials-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.testimonials .heading{
+    margin-bottom: 5rem; 
+}
+.testimonials img{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    object-fit: cover; 
+    object-position: center;  
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+.testimonial-item{
+    min-height: 550px;
+    max-width: 450px;
+    background: (0, 0, 0, 0.7);
+    border: 3px solid(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    padding: 30px 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+.testimonial-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color),
+}
+.testimondial-item h2{
+    font-size: 2.8rem;
+}
+.testimonial-item p{
+    font-size: 1.3rem;    
+}
+#star{
+    color: gold;
+    font-size: 2rem;
+}
+.contact{
+    background-color: var(--bg-color);
+}
+.contact h2{
+    margin-bottom: 3rem;
+    color: white;
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    text-align: center;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form .input-box textarea { /* */
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background: var(--second-bg-color); /* */
+    border-radius: 2rem;
+    border: 2px solid var(--main-color); /* */
+    margin: 1.5rem 0;
+    resize: none;
+}
+
+/* ADD A NEW RULE specifically for the textarea inside .input-group-2 */
+.contact form .input-group-2 textarea {
+    width: 100%; /* */
+    padding: 2.5rem; /* */
+    font-size: 1.8rem; /* */
+    color: var(--text-color); /* */
+    background: var(--second-bg-color); /* Apply the same background */
+    border-radius: 2rem; /* */
+    border: 2px solid var(--main-color); /* Apply the same border */
+    margin: 1.5rem 0; /* */
+    resize: none; /* */
+}
+
+/* Also adjust the button if it's not looking right */
+.contact form .btn {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 1.2rem 2.8rem; /* Use the padding from your other .btn styles */
+    background-color: var(--main-color); /* Typically the main color for buttons */
+    color: var(--bg-color); /* Text color for the button */
+    border-radius: 4rem; /* Match other buttons */
+    box-shadow: 0 0 25px var(--main-color); /* Add button shadow */
+    font-size: 1.6rem; /* Match other buttons */
+    font-weight: 600; /* Match other buttons */
+    border: 2px solid transparent; /* Match other buttons */
+    transition: 0.3s ease-in-out; /* Match other buttons */
+    cursor: pointer; /* Match other buttons */
+    margin-top: 1.5rem; /* Add some space above the button */
+}
+
+/* You already have the hover for .btn, ensure it's still there */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--main-color);
+}
+.footer .social a{
+    font-size: 25px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color),
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-color);
+}
+.footer ul li{
+    display: inline-block;
+    margin: 0 15px;
+}
+.footer .copyright{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+@media(max-width:1285px){
+    html{
+        font-size: 55%;
+    }
+    .services-container{
+        padding-bottom: 7rem;
+        grid-template-columns: repeat(2,1fr);
+        margin: 0 5rem;
+    }
+}
+@media(max-width: 991px){
+    header{
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .timeline-items::before{
+        left:7px;
+    }
+    .timeline-item:nth-child(odd){
+        padding-right: 0;
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 37px;
+    }
+    .timeline-dot{
+        left: 0;
+    }
+    .services{
+        padding-bottom: 7rem;
+    }
+    .testimonials .wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact form{
+        flex-direction: column; /* Stack the input boxes vertically */
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+@media(max-width: 895px){
+    #menu-icon {
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background: rgba(0, 0, 0, 0.826);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+    }
+    .navbar a {
+        display: block; /* Make links stack vertically */
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+    .home-content h3{
+        font-size: 2.6; /* Adjust heading size for smaller screens */
+    }
+    .home-content h1{
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .home-content p{
+        margin: 0 auto; /* Adjust paragraph size for smaller screens */
+        max-width: 600px; /* Allow full width on smaller screens */
+    }
+    .home-img img{
+    width: 56vw;
+    }
+    .services h2{
+        margin-bottom: 3rem;
+    }
+    .services-container{
+        grid-template-columns: repeat(1, 1fr); /* Stack services vertically on smaller screens */
+    }
+}
+
+@media (min-width: 769px) { /* Adjust this breakpoint as needed */
+    #menu-icon {
+        display: none;
+    }
+
+    /* Ensure the regular navbar is visible on larger screens */
+    .navbar {
+        display: flex !important; /* Use !important if other rules are overriding it */
+    }
+}
+
+/* Optional: If you have specific styles for smaller screens, keep them separate */
+@media (max-width: 768px) { /* For screens up to 768px wide */
+    #menu-icon {
+        display: block; /* Or whatever display property makes it visible (e.g., flex) */
+    }
+
+    /* Ensure the navbar is hidden by default on small screens (and toggled by JS) */
+    .navbar {
+        /* Example initial hidden state for mobile, adjust as per your JS toggle */
+        display: none;
+        flex-direction: column; /* Often columnar for mobile menus */
+        position: absolute;
+        top: 8rem; /* Below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--second-bg-color); /* Or appropriate background */
+        padding: 1rem 0;
+        z-index: 4; /* Below header, above other content */
+    }
+
+    /* When active, show the navbar */
+    .navbar.active {
+        display: flex; /* Or block */
+    }
+}
+
